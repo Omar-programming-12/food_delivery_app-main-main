@@ -19,17 +19,21 @@ class FoodDeliveryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: AuthWrapper(),
-      initialRoute: '/splash',
-      routes: {
-        '/splash': (context) => SplashScreen(),
-        '/login': (context) => LoginScreen(),
-        '/home': (context) => HomeScreen(categories: []),
-        '/adminHome': (context) => AdminScreen(),
-        '/signIn': (context) => SignInScreen(),
-        // صفحة الإدارة اللي هتصممها
-      },
-    );
+  debugShowCheckedModeBanner: false,
+  home: AuthWrapper(),
+  initialRoute: '/splash',
+  routes: {
+    '/splash': (context) => SplashScreen(),
+    '/login': (context) => LoginScreen(),
+    '/home': (context) => HomeScreen(categories: [] ),
+    '/adminHome': (context) => AdminScreen(),
+    '/signIn' :  (context) => SignInScreen(),
+     // صفحة الإدارة اللي هتصممها
+  },
+);
+
   }
 }
+
+
+
