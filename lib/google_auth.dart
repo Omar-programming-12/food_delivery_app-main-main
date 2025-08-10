@@ -6,13 +6,11 @@ class FirebaseServices {
   final googleSignIn = GoogleSignIn();
   Future<bool> signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleSignInAccount =
-          await googleSignIn.signIn();
+      final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
       if (googleSignInAccount == null) {
         return false;
       }
-      final GoogleSignInAuthentication googleSignInAuthentication =
-          await googleSignInAccount.authentication;
+      final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
       final AuthCredential authCredential = GoogleAuthProvider.credential(
         accessToken: googleSignInAuthentication.accessToken,
         idToken: googleSignInAuthentication.idToken,
@@ -24,7 +22,6 @@ class FirebaseServices {
       return false;
     }
   }
-
   googleSignOut() async {
     await auth.signOut();
     await googleSignIn.signOut();
